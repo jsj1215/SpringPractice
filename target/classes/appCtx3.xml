@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       
+       <bean id="informationService" class="ems.member.InformationService">
+	       <!-- List타입일 경우 -->
+		<property name="developers">
+			<list>
+				<value>Choi.</value>
+				<value>Joy.</value>
+				<value>Jasper.</value>
+			</list>
+		</property>
+		
+		<!-- Map타입일 경우 -->
+		<property name="adminstrators">
+			<map>
+				<entry>
+					<key>
+						<value>Choi</value>
+					</key>
+						<value>Choi@abcd.co.kr</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Joy</value>
+					</key>
+					<value>Joy@efgh.co.kr</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Jasper</value>
+					</key>
+					<ref bean = "dataBaseConnectionInfoDev"></ref>
+				</entry>
+			</map>
+		</property>
+	</bean>
+	
+	
+</beans>

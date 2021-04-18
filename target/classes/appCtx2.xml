@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+    
+    <bean id="dateBaseConnectionInfoDev" class="ems.member.DateBaseConnectionInfo">
+	<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:xe"></property> <!-- name의 값은 Setter의 set 뒤부터 첫번째 소문자로 변경 후 -->
+	<property name="userId" value="scott"></property>
+	<property name="userPwd" value="tiger"></property>
+	</bean>
+	   
+       
+</beans>

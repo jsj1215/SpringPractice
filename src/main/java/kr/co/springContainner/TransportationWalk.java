@@ -1,4 +1,4 @@
-package testProject;
+package kr.co.springContainner;
 
 public class TransportationWalk {
 	public void move() {
