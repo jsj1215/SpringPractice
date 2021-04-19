@@ -3,6 +3,8 @@ package com.word.service;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -10,7 +12,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import com.word.WordSet;
 import com.word.dao.WordDao;
 
-public class WordRegisterService {
+public class WordRegisterService implements InitializingBean,DisposableBean{
 
 	// 프로퍼티나 메소드에 Autowired부여하려면,
 	// 반드시 기본 생성자 명시해야 함.
@@ -44,6 +46,15 @@ public class WordRegisterService {
 	
 	public void setWordDao(WordDao wrodDao) {
 		this.wordDao = wordDao;
+	}
+
+	public void destroy() throws Exception {
+		System.out.println("Bean객체 소멸");
+		
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("Bean객체 생성");
 	}
 	
 	
